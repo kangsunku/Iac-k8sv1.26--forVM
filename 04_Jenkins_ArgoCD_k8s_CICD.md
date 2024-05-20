@@ -1,3 +1,5 @@
+## Jenkins + ArgoCD 로 k8s CI/CD 파이프라인 구축하기
+
 지난번에 '[Jib로 자바 컨테이너 빌드 및 배포하기](https://velog.io/@yellowsunn/Jib%EB%A1%9C-%EC%9E%90%EB%B0%94-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EB%B9%8C%EB%93%9C-%EB%B0%8F-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0)' 로 도커 이미지를 빌드하고 저장소에 배포하는 방법을 알아봤다.  
 이번에는 이미지의 태그가 새로운 버전으로 업데이트 될때마다 실행중인 k8s 파드 역시 새로운 버전에 맞게 자동으로 배포하고자 한다.
 
