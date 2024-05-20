@@ -7,7 +7,7 @@ Vagrant는 Vagrantfile을 작성해서 가상머신(기본값 Virtualbox) 위에
 1. [로컬에 쿠버네티스 클러스터 환경 구축하기](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/01_local_k8s_forVM.md)
 2. [가상머신에 OpenVpn 서버 설치하기](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/02_local_openVPN%20Server.md)
 3. [Jib로 자바 컨테이너 빌드 및 배포하기](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/03_Jib_forVM.md)
-4. [Jenkins + ArgoCD 로 k8s CI/CD 파이프라인 구축하기](
+4. [Jenkins + ArgoCD 로 k8s CI/CD 파이프라인 구축하기](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/04_Jenkins_ArgoCD_k8s_CICD.md)
 
    
 ### 실행 예시
