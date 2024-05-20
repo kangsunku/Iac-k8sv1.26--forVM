@@ -4,9 +4,7 @@
 ## Vagrant
 Vagrant는 Vagrantfile을 작성해서 가상머신(기본값 Virtualbox) 위에 자동으로 OS를 설치하고 인프라를 프로비저닝할 수 있다.
 
-참고: [로컬 인프라 환경 구축하기](https://velog.io/@yellowsunn/series/%EB%A1%9C%EC%BB%AC-%EC%9D%B8%ED%94%84%EB%9D%BC-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0)
-
-![1662053789-dev-dot-product-landing-what-is-vagrant-diagram](https://user-images.githubusercontent.com/43487002/225525614-824269d7-189b-47df-a900-7d3b70e6c3bd.png)
+1. 로컬에 쿠버네티스 클러스터 환경 구축하기(https://user-images.githubusercontent.com/43487002/225531403-03bc9a4c-5059-484a-835b-4eea68bc6690.png)
 
 ### 실행 예시
 * Vagrantfile 이 있는 경로에서 `vagrant up` 명령어 실행
