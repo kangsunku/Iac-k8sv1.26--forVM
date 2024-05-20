@@ -5,6 +5,7 @@
 Vagrant는 Vagrantfile을 작성해서 가상머신(기본값 Virtualbox) 위에 자동으로 OS를 설치하고 인프라를 프로비저닝할 수 있다.
 
 1. [로컬에 쿠버네티스 클러스터 환경 구축하기](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/01_local_k8s_forVM.md)
+2. [가상머신에 OpenVpn 서버 설치하기](
 ### 실행 예시
 * Vagrantfile 이 있는 경로에서 `vagrant up` 명령어 실행
 ```bash
