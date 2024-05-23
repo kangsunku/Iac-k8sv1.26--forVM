@@ -48,11 +48,11 @@ Vagrant를 이용하면 로컬에서 가상머신에 kubeadm 클러스터 환경
 ### 실행하기
 
 ```bash
-$ git clone https://github.com/yellowsunn/local-iac.git
+$ git clone https://github.com/kangsunku/Iac-k8sv1.26--forVM.git
 ```
 
 ```bash
-$ cd local-iac/vagrant/k8s_1_26
+$ cd Iac-k8sv1.26--forVM/vagrant/k8s_1_26
 ```
 
 ```bash
@@ -67,15 +67,15 @@ Vagrant.configure("2") do |config| # 마스터 노드 config.vm.define "m-k8s-1.
 
 ### Vagrant 실행 결과
 
-![](https://velog.velcdn.com/images/yellowsunn/post/4b87db93-ed8f-4c7c-abb9-d1015e8acebe/image.png)  
+
 `vagrant up` 명령을 실행하고 작업이 완료되는 것을 기다리면 VirtualBox에 실행중인 4대의 VM 인스턴스를 확인할 수 있다.
 
-![](https://velog.velcdn.com/images/yellowsunn/post/2d1af0d0-baf5-4d20-b26f-b2498de1c812/image.png)  
+
 마스터 노드(m-k8s-1.26) 서버에 접속하여 `$ kubectl get nodes` 명령어로 클러스터에 구성되어 있는 모든 노드가 확인 가능하다. ROLES가 **control-plan**인 클러스터의 상태와 설정 값을 저장하고 관리하는 마스터 노드다.
 
 ### 전체적인 구성도
 
-![](https://velog.velcdn.com/images/yellowsunn/post/270e88c3-8724-47c0-8742-d527e63928bc/image.jpg)
+
 
 참고자료  
 [https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%80%EB%8B%9D](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%80%EB%8B%9D)  
