@@ -1,10 +1,10 @@
 ## 가상머신에 OpenVpn 서버 설치하기
 
-[이전](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/01_local_k8s_forVM.md)에 가상 머신에 개발 환경을 구성하고 나서 한가지 불편한 점이 생겼다. 바로 외부 환경에서 가상머신으로 접속이 까다롭다는 점이다.
+[이전](https://github.com/kangsunku/Iac-k8sv1.26--forVM/blob/main/README_k8s.md)에 가상 머신에 개발 환경을 구성하고 나서 한가지 불편한 점이 생겼다. 바로 외부 환경에서 가상머신으로 접속이 까다롭다는 점이다.
 
 가상머신이 설치되어 있는 서버에서는 쉽게 접근할 수 있지만 외부에서 접근하려면 포트포워딩이 가능하도록 외부 포트를 설정하고 개방해줘야한다.
 
-![](https://velog.velcdn.com/images/yellowsunn/post/b251c1fb-4acb-4a41-9b52-a81a607565c2/image.png)
+
 
 ### 외부에서 가상머신으로 요청하기
 
