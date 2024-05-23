@@ -26,8 +26,8 @@ Vagrant를 이용하면 로컬에서 가상머신에 kubeadm 클러스터 환경
 
 **k8s 클러스터 (Virtualbox)**
 
--   master-node: 192.168.29.10
--   worker-node: 192.168.29.11-192.168.29.13 (3대)
+-   master-node: 192.168.50.20
+-   worker-node: 192.168.50.21-192.168.50.23 (3대)
 
 **Version**
 
@@ -62,7 +62,7 @@ $ vagrant up
 ### Vagrantfile
 
 ```yml
-Vagrant.configure("2") do |config| # 마스터 노드 config.vm.define "m-k8s-1.26", primary: true do |cfg| cfg.vm.box = "sysnet4admin/CentOS-k8s" cfg.vm.provider "virtualbox" do |vb| vb.name = "m-k8s-1.26" vb.cpus = 4 vb.memory = 4096 vb.customize ["modifyvm", :id, "--groups", "/k8s-1.26"] end cfg.vm.host_name = "m-k8s" cfg.vm.network "private_network", ip: "192.168.29.10" cfg.vm.network "forwarded_port", guest: 22, host: 60020, auto_correct: true, id: "ssh" cfg.vm.synced_folder "../data", "/vagrant", disabled: true cfg.vm.provision "shell", path: "k8s_env_build.sh", args: N cfg.vm.provision "shell", path: "k8s_pkg_cfg.sh", args: [ k8s_V, docker_V, ctrd_V ] cfg.vm.provision "shell", path: "master_node.sh" end ### 워커 노드 (1..N).each do |i| config.vm.define "w#{i}-k8s-1.26" do |cfg| cfg.vm.box = "sysnet4admin/CentOS-k8s" cfg.vm.provider "virtualbox" do |vb| vb.name = "w#{i}-k8s-1.26" vb.cpus = 2 vb.memory = 2048 vb.customize ["modifyvm", :id, "--groups", "/k8s-1.26"] end cfg.vm.host_name = "w#{i}-k8s" cfg.vm.network "private_network", ip: "192.168.29.1#{i}" cfg.vm.network "forwarded_port", guest: 22, host: "6020#{i}", auto_correct: true, id: "ssh" cfg.vm.synced_folder "../data", "/vagrant", disabled: true cfg.vm.provision "shell", path: "k8s_env_build.sh", args: N cfg.vm.provision "shell", path: "k8s_pkg_cfg.sh", args: [ k8s_V, docker_V, ctrd_V ] cfg.vm.provision "shell", path: "work_nodes.sh" end end end
+Vagrant.configure("2") do |config| # 마스터 노드 config.vm.define "m-k8s-1.26", primary: true do |cfg| cfg.vm.box = "sysnet4admin/CentOS-k8s" cfg.vm.provider "virtualbox" do |vb| vb.name = "m-k8s-1.26" vb.cpus = 4 vb.memory = 4096 vb.customize ["modifyvm", :id, "--groups", "/k8s-1.26"] end cfg.vm.host_name = "m-k8s" cfg.vm.network "private_network", ip: "192.168.50.20" cfg.vm.network "forwarded_port", guest: 22, host: 60020, auto_correct: true, id: "ssh" cfg.vm.synced_folder "../data", "/vagrant", disabled: true cfg.vm.provision "shell", path: "k8s_env_build.sh", args: N cfg.vm.provision "shell", path: "k8s_pkg_cfg.sh", args: [ k8s_V, docker_V, ctrd_V ] cfg.vm.provision "shell", path: "master_node.sh" end ### 워커 노드 (1..N).each do |i| config.vm.define "w#{i}-k8s-1.26" do |cfg| cfg.vm.box = "sysnet4admin/CentOS-k8s" cfg.vm.provider "virtualbox" do |vb| vb.name = "w#{i}-k8s-1.26" vb.cpus = 2 vb.memory = 2048 vb.customize ["modifyvm", :id, "--groups", "/k8s-1.26"] end cfg.vm.host_name = "w#{i}-k8s" cfg.vm.network "private_network", ip: "192.168.50.2#{i}" cfg.vm.network "forwarded_port", guest: 22, host: "6020#{i}", auto_correct: true, id: "ssh" cfg.vm.synced_folder "../data", "/vagrant", disabled: true cfg.vm.provision "shell", path: "k8s_env_build.sh", args: N cfg.vm.provision "shell", path: "k8s_pkg_cfg.sh", args: [ k8s_V, docker_V, ctrd_V ] cfg.vm.provision "shell", path: "work_nodes.sh" end end end
 ```
 
 ### Vagrant 실행 결과
