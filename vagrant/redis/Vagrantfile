@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--groups", "/infra"]
     end
     cfg.vm.host_name = "redis-server"
-    cfg.vm.network "private_network", ip: "192.168.29.17"
+    cfg.vm.network "private_network", ip: "192.168.50.27"
     cfg.vm.synced_folder "../data", "/vagrant", disabled: true
     cfg.vm.provision "docker" do |d|
       d.run "redis:7.0", args: "-p 6379:6379 -v /docker/redis/data:/data"
